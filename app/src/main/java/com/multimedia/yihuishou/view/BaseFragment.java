@@ -30,32 +30,32 @@ public abstract class BaseFragment
     /**
      * 环境对象
      */
-    protected Context        mContext;
+    protected Context mContext;
     /**
      * 布局加载器
      */
-    private   LayoutInflater mInflater;
+    private LayoutInflater mInflater;
 
     /**
      * 是否销毁视图
      */
-    private   boolean     isDestroyView;
+    private boolean isDestroyView;
     /**
      * 当前视图资源ID
      */
-    private   int         mContentResID;
+    private int mContentResID;
     /**
      * 当前视图
      */
-    protected View        vContentView;
+    protected View vContentView;
     /**
      * 是否应用主题
      */
-    private   boolean     isTheme = true;
+    private boolean isTheme = true;
     /**
      * 标题
      */
-    private   String      mTitle;
+    private String mTitle;
 
 
     @Override
@@ -141,7 +141,6 @@ public abstract class BaseFragment
     }
 
 
-
     public String getTitle() {
         return mTitle;
     }
@@ -149,8 +148,6 @@ public abstract class BaseFragment
     public void setTitle(String title) {
         mTitle = title;
     }
-
-
 
 
     /**
