@@ -1,6 +1,6 @@
 package com.multimedia.yihuishou.entity;
 
-public class ConsumeRecordEntity {
+public class ConsumeRecordEntity extends BaseEntity{
 
     /**
      * cardNo : string
@@ -84,5 +84,29 @@ public class ConsumeRecordEntity {
 
     public void setResidentAccount(String residentAccount) {
         this.residentAccount = residentAccount;
+    }
+
+    @Override
+    public String getTitle() {
+        return null;
+    }
+
+    @Override
+    public String getUrl() {
+        return null;
+    }
+
+    @Override
+    public String getSubtitle() {
+        return null;
+    }
+
+    @Override
+    public String getDesc() {
+        return null;
+    }
+    @Override
+    public boolean isChecked() {
+        return false;
     }
 }

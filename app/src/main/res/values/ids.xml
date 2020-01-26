@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <item name="gridview" type="id"/>
+    <item name="webview" type="id"/>
+    <item name="scrollview" type="id"/>
+    <item name="viewpager" type="id"/>
+    <item name="recyclerview" type="id"/>
+    <item name="navigationbar_bg" type="id"/>
+
+    <item name="event_clicks_time" type="id"/>
+    <item name="event_clicks_count" type="id"/>
+
+    <item name="show_view" type="id"/>
+
+    <item type="id" name="decode"/>
+    <item type="id" name="decode_failed"/>
+    <item type="id" name="decode_succeeded"/>
+    <item type="id" name="launch_product_query"/>
+    <item type="id" name="quit"/>
+    <item type="id" name="restart_preview"/>
+    <item type="id" name="return_scan_result"/>
+</resources>

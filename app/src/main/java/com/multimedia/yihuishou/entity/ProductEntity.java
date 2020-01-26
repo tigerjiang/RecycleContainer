@@ -1,6 +1,6 @@
 package com.multimedia.yihuishou.entity;
 
-public class ProductEntity {
+public class ProductEntity extends BaseEntity{
     /**
      * comment : 500ML洗手液
      * count : 100
@@ -93,5 +93,45 @@ public class ProductEntity {
 
     public void setUnit(String unit) {
         this.unit = unit;
+    }
+
+    @Override
+    public String toString() {
+        return "ProductEntity{" +
+                "comment='" + comment + '\'' +
+                ", count=" + count +
+                ", createdTime='" + createdTime + '\'' +
+                ", id=" + id +
+                ", modifiedTime='" + modifiedTime + '\'' +
+                ", name='" + name + '\'' +
+                ", price=" + price +
+                ", status='" + status + '\'' +
+                ", unit='" + unit + '\'' +
+                '}';
+    }
+
+    @Override
+    public String getTitle() {
+        return name;
+    }
+
+    @Override
+    public String getUrl() {
+        return null;
+    }
+
+    @Override
+    public String getSubtitle() {
+        return comment;
+    }
+
+    @Override
+    public String getDesc() {
+        return null;
+    }
+
+    @Override
+    public boolean isChecked() {
+        return false;
     }
 }

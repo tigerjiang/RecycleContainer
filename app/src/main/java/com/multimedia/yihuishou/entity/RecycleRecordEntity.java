@@ -1,6 +1,6 @@
 package com.multimedia.yihuishou.entity;
 
-public class RecycleRecordEntity {
+public class RecycleRecordEntity extends BaseEntity{
 
     /**
      * account : string
@@ -94,5 +94,30 @@ public class RecycleRecordEntity {
 
     public void setWeight(int weight) {
         this.weight = weight;
+    }
+
+    @Override
+    public String getTitle() {
+        return null;
+    }
+
+    @Override
+    public String getUrl() {
+        return null;
+    }
+
+    @Override
+    public String getSubtitle() {
+        return null;
+    }
+
+    @Override
+    public String getDesc() {
+        return null;
+    }
+
+    @Override
+    public boolean isChecked() {
+        return false;
     }
 }

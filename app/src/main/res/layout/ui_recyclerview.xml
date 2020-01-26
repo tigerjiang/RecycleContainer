@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <UIRecyclerListView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/ui_recycler_listview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:overScrollMode="never"
+        android:scrollbars="none"/>
+
+    <com.miui.video.core.ui.UILoadingView
+        android:id="@+id/ui_loadingview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+</merge>

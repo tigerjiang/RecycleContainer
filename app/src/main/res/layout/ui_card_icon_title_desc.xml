@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/v_layout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:clickable="true"
+    android:paddingStart="@dimen/dp_27"
+    android:paddingEnd="@dimen/d_ui_parent_padding_width_13">
+
+    <com.multimedia.yihuishou.view.ui.UIImageView
+        android:id="@+id/ui_icon"
+        android:layout_width="@dimen/dp_60"
+        android:layout_height="@dimen/dp_60"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:layout_marginTop="@dimen/dp_8"
+        android:layout_marginEnd="@dimen/d_ui_parent_padding_width_13"
+        android:layout_marginBottom="@dimen/dp_8"
+        android:background="@drawable/bg_livetv_icon"
+        android:scaleType="centerCrop"
+        app:uiType="circle"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginTop="@dimen/d_ui_parent_padding_width_8"
+        android:layout_marginBottom="@dimen/d_ui_parent_padding_width_8"
+        android:layout_toRightOf="@+id/ui_icon"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/v_title"
+            style="@style/tv_singleLine"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/dp_2"
+            android:layout_toRightOf="@+id/ui_icon"
+            android:drawablePadding="@dimen/dp_5"
+            android:textColor="@color/c_black_70"
+            android:textSize="@dimen/sp_12"/>
+
+        <TextView
+            android:id="@+id/v_subtitle"
+            style="@style/tv_singleLine"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/v_title"
+            android:layout_toRightOf="@+id/ui_icon"
+            android:textColor="@color/c_black_70"
+            android:textSize="@dimen/sp_12"/>
+
+        <TextView
+            android:id="@+id/v_desc"
+            style="@style/tv_singleLine"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/v_subtitle"
+            android:layout_toRightOf="@+id/ui_icon"
+            android:includeFontPadding="false"
+            android:textColor="@color/c_black_40"
+            android:textSize="@dimen/sp_12"/>
+    </LinearLayout>
+</RelativeLayout>

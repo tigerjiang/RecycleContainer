@@ -1,6 +1,8 @@
 package com.multimedia.yihuishou.entity;
 
-public class RubblishEntity {
+import com.multimedia.yihuishou.utils.Constant;
+
+public class RubblishEntity extends BaseEntity{
     /**
      * comment : 玩具、亚克力
      * createdTime : 2020-01-17 23:18:35
@@ -83,5 +85,55 @@ public class RubblishEntity {
 
     public void setStatus(String status) {
         this.status = status;
+    }
+
+    @Override
+    public String toString() {
+        return "RubblishEntity{" +
+                "comment='" + comment + '\'' +
+                ", createdTime='" + createdTime + '\'' +
+                ", deleted='" + deleted + '\'' +
+                ", id=" + id +
+                ", integralType='" + integralType + '\'' +
+                ", integralWeight=" + integralWeight +
+                ", name='" + name + '\'' +
+                ", status='" + status + '\'' +
+                '}';
+    }
+
+    @Override
+    public String getTitle() {
+        return name;
+    }
+
+    @Override
+    public String getUrl() {
+        return null;
+    }
+
+    @Override
+    public String getSubtitle() {
+        return comment;
+    }
+
+    @Override
+    public String getDesc() {
+        //按次计算
+        if (integralType.equals(Constant.CZD_KEY)) {
+
+           return  integralWeight+ "积分" + " / 次";
+           //重量自动计算
+        } else if (integralType.equals(Constant.WZD_KEY)) {
+            return  integralWeight+ "积分" + " / 千克";
+            //重量手动计算
+        } else if (integralType.equals(Constant.WSD_KEY)) {
+            return  integralWeight+ "积分" + " ";
+            //重量手动计算
+        }
+        return integralWeight + "";
+    }
+    @Override
+    public boolean isChecked() {
+        return false;
     }
 }

@@ -1,6 +1,7 @@
 package com.multimedia.yihuishou.entity;
+
 //居民信息
-public class ResidentEntity {
+public class ResidentEntity extends BaseEntity {
 
     /**
      * account : string
@@ -19,10 +20,10 @@ public class ResidentEntity {
     private String account;
     private String address;
     private String cardNo;
-    private int communityID;
-    private int deleted;
-    private int id;
-    private int integral;
+    private String communityID;
+    private String deleted;
+    private String id;
+    private String integral;
     private String name;
     private String registTime;
     private String sex;
@@ -52,35 +53,35 @@ public class ResidentEntity {
         this.cardNo = cardNo;
     }
 
-    public int getCommunityID() {
+    public String getCommunityID() {
         return communityID;
     }
 
-    public void setCommunityID(int communityID) {
+    public void setCommunityID(String communityID) {
         this.communityID = communityID;
     }
 
-    public int getDeleted() {
+    public String getDeleted() {
         return deleted;
     }
 
-    public void setDeleted(int deleted) {
+    public void setDeleted(String deleted) {
         this.deleted = deleted;
     }
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 
-    public int getIntegral() {
+    public String getIntegral() {
         return integral;
     }
 
-    public void setIntegral(int integral) {
+    public void setIntegral(String integral) {
         this.integral = integral;
     }
 
@@ -114,5 +115,43 @@ public class ResidentEntity {
 
     public void setTel(String tel) {
         this.tel = tel;
+    }
+
+    @Override
+    public String getTitle() {
+        return null;
+    }
+
+    @Override
+    public String getUrl() {
+        return null;
+    }
+
+    @Override
+    public String getSubtitle() {
+        return null;
+    }
+
+    @Override
+    public String getDesc() {
+        return null;
+    }
+
+    @Override
+    public boolean isChecked() {
+        return false;
+    }
+
+
+    @Override
+    public boolean equals(Object obj) {
+        if (!(obj instanceof ResidentEntity)) {
+            return false;
+        }
+        ResidentEntity entity = (ResidentEntity) obj;
+        if (entity.cardNo == this.cardNo && entity.integral == this.integral) {
+            return true;
+        }
+        return false;
     }
 }

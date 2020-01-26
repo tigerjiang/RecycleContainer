@@ -37,7 +37,7 @@ public interface RetroDataApi {
 
 
     //获取垃圾分类
-    @GET("getCommunityTypeList")
+    @GET("getRubblishTypeList")
     Observable<ModelBase<RubblishEntity>> getRubblishTypeList();
 
 

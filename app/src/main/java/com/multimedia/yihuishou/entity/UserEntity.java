@@ -1,6 +1,6 @@
 package com.multimedia.yihuishou.entity;
 
-public class UserEntity {
+public class UserEntity extends BaseEntity{
 
     /**
      * account : string
@@ -224,5 +224,29 @@ public class UserEntity {
 
     public void setVersion(int version) {
         this.version = version;
+    }
+
+    @Override
+    public String getTitle() {
+        return null;
+    }
+
+    @Override
+    public String getUrl() {
+        return null;
+    }
+
+    @Override
+    public String getSubtitle() {
+        return null;
+    }
+
+    @Override
+    public String getDesc() {
+        return null;
+    }
+    @Override
+    public boolean isChecked() {
+        return false;
     }
 }

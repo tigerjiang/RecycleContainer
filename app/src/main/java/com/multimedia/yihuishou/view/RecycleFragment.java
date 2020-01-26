@@ -1,53 +1,96 @@
 package com.multimedia.yihuishou.view;
 
+import android.content.Intent;
 import android.view.View;
 
+import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.multimedia.yihuishou.R;
+import com.multimedia.yihuishou.RecycleDetailActivity;
+import com.multimedia.yihuishou.entity.BaseEntity;
+import com.multimedia.yihuishou.entity.RubblishEntity;
 import com.multimedia.yihuishou.log.LogUtils;
-import com.multimedia.yihuishou.view.BaseFragment;
+import com.multimedia.yihuishou.net.NetDataUtils;
+import com.multimedia.yihuishou.utils.Constant;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class RecycleFragment extends BaseFragment {
     private static final String TAG = RecycleFragment.class.getSimpleName();
-    RecyclerView mRecycleView;
-    private List<String> mData = new ArrayList<>();
+    //    UIRecyclerView vUIRecyclerView;
+    RecyclerView vUIRecyclerView;
+    GeneralAdapter mGeneralAdapter;
+    private List<RubblishEntity> mData = new ArrayList<>();
+    private RubblishEntity mCurrentRubblish;
 
     @Override
     protected int setLayoutResId() {
         return R.layout.recycle_fragment_layout;
     }
 
+
     @Override
     public void initFindViews() {
-        mRecycleView = vContentView.findViewById(R.id.ry_rv);
-        mRecycleView.setLayoutManager(new LinearLayoutManager(getContext()));
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
-        linearLayoutManager.setOrientation(RecyclerView.VERTICAL);
-        GeneralAdapter generalAdapter = new GeneralAdapter(getContext(), generateData());
-        generalAdapter.setOnItemClickListener(new GeneralAdapter.OnItemClickListener() {
+        vUIRecyclerView = (RecyclerView) vContentView.findViewById(R.id.ry_rv);
+        LinearLayoutManager layoutManager = new LinearLayoutManager(mContext);
+        layoutManager.setOrientation(RecyclerView.VERTICAL);
+        // 设置布局管理器
+        vUIRecyclerView.setLayoutManager(layoutManager);
+
+        // 设置分隔线
+        vUIRecyclerView.addItemDecoration(new LinearLayoutItemDecoration(mContext.getResources().getDimensionPixelOffset(R.dimen.dp_13_3), false));
+        // 设置增加或删除条目的动画
+        vUIRecyclerView.setItemAnimator(new DefaultItemAnimator());
+
+        mGeneralAdapter = new GeneralAdapter(getContext());
+        mGeneralAdapter.setOnItemClickListener(new GeneralAdapter.OnItemClickListener() {
             @Override
-            public void onItemClick(View view, int position) {
-                LogUtils.d(TAG, " data : " + position + " - " + mData.get(position));
+            public void onItemClickListener(int position) {
+                mCurrentRubblish = mData.get(position);
+                requestScanQR();
             }
         });
-
-        mRecycleView.setAdapter(generalAdapter);
+        // 设置Adapter;
+        vUIRecyclerView.setAdapter(mGeneralAdapter);
+        getRubblishData();
     }
 
-    private List<String> generateData() {
-        mData.add("haha");
-        mData.add("haha");
-        mData.add("haha");
-        mData.add("aa");
-        mData.add("haha");
-        mData.add("haha");
-        mData.add("aa");
-        mData.add("haha");
-        return mData;
+
+    @Override
+    public void handleQRcode(String qrString) {
+
+        Intent intent = new Intent(getContext(), RecycleDetailActivity.class);
+        intent.putExtra("title", "RecycleDetail");
+        intent.putExtra(Constant.CARD_ID_KEY, "xhd123212");
+        intent.putExtra(Constant.RUBBLISH_KEY, mCurrentRubblish);
+        startActivity(intent);
+        LogUtils.d(TAG, " handleQRcode " + qrString);
+    }
+
+
+    private void getRubblishData() {
+        NetDataUtils.getInstance().
+                getRubblishTypeList(new NetDataUtils.RequestResultListener<RubblishEntity>() {
+                    @Override
+                    public void returnFail(Throwable e) {
+
+                    }
+
+                    @Override
+                    public void returnSuccess(List<RubblishEntity> entity) {
+                        LogUtils.d(TAG, "returnSuccess : " + entity.toString());
+                        mGeneralAdapter.setData(entity);
+                    }
+
+
+                    @Override
+                    public void requestStart() {
+
+                    }
+
+                });
     }
 }

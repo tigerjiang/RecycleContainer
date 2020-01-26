@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="PullToRefresh">
+
+        <!-- A drawable to use as the background of the Refreshable View -->
+        <attr name="ptrRefreshableViewBackground" format="reference|color"/>
+
+        <!-- A drawable to use as the background of the Header and Footer Loading Views -->
+        <attr name="ptrHeaderBackground" format="reference|color"/>
+
+        <!-- Text Color of the Header and Footer Loading Views -->
+        <attr name="ptrHeaderTextColor" format="reference|color"/>
+
+        <!-- Text Color of the Header and Footer Loading Views Sub Header -->
+        <attr name="ptrHeaderSubTextColor" format="reference|color"/>
+
+        <!-- Mode of Pull-to-Refresh that should be used -->
+        <attr name="ptrMode">
+            <flag name="disabled" value="0x0"/>
+            <flag name="pullFromStart" value="0x1"/>
+            <flag name="pullFromEnd" value="0x2"/>
+            <flag name="both" value="0x3"/>
+            <flag name="manualOnly" value="0x4"/>
+
+            <!-- These last two are depreacted -->
+            <flag name="pullDownFromTop" value="0x1"/>
+            <flag name="pullUpFromBottom" value="0x2"/>
+        </attr>
+
+        <!-- Whether the Indicator overlay(s) should be used -->
+        <attr name="ptrShowIndicator" format="reference|boolean"/>
+
+        <!-- Drawable to use as Loading Indicator. Changes both Header and Footer. -->
+        <attr name="ptrDrawable" format="reference"/>
+
+        <!-- Drawable to use as Loading Indicator in the Header View. Overrides value set in ptrDrawable. -->
+        <attr name="ptrDrawableStart" format="reference"/>
+
+        <!-- Drawable to use as Loading Indicator in the Footer View. Overrides value set in ptrDrawable. -->
+        <attr name="ptrDrawableEnd" format="reference"/>
+
+        <!-- Whether Android's built-in Over Scroll should be utilised for Pull-to-Refresh. -->
+        <attr name="ptrOverScroll" format="reference|boolean"/>
+
+        <!-- Base text color, typeface, size, and style for Header and Footer Loading Views -->
+        <attr name="ptrHeaderTextAppearance" format="reference"/>
+
+        <!-- Base text color, typeface, size, and style for Header and Footer Loading Views Sub Header -->
+        <attr name="ptrSubHeaderTextAppearance" format="reference"/>
+
+        <!-- Style of Animation should be used displayed when pulling. -->
+        <attr name="ptrAnimationStyle">
+            <flag name="rotate" value="0x0"/>
+            <flag name="flip" value="0x1"/>
+        </attr>
+
+        <!-- Whether the user can scroll while the View is Refreshing -->
+        <attr name="ptrScrollingWhileRefreshingEnabled" format="reference|boolean"/>
+
+        <!--
+        	Whether PullToRefreshListView has it's extras enabled. This allows the user to be 
+        	able to scroll while refreshing, and behaves better. It acheives this by adding
+        	Header and/or Footer Views to the ListView.
+        -->
+        <attr name="ptrListViewExtrasEnabled" format="reference|boolean"/>
+
+        <!--
+        	Whether the Drawable should be continually rotated as you pull. This only
+        	takes effect when using the 'Rotate' Animation Style.
+        -->
+        <attr name="ptrRotateDrawableWhilePulling" format="reference|boolean"/>
+
+        <!-- BELOW HERE ARE DEPRECEATED. DO NOT USE. -->
+        <attr name="ptrAdapterViewBackground" format="reference|color"/>
+        <attr name="ptrDrawableTop" format="reference"/>
+        <attr name="ptrDrawableBottom" format="reference"/>
+    </declare-styleable>
+
+    <!--实现自定义ImageView（可边框，圆形，椭圆形，圆角，多边形）-->
+    <declare-styleable name="UIImageView">
+        <!--UI类型——0：普通，1：边框，2：圆形，3：椭圆形，4：圆角，5：多边形）-->
+        <attr name="uiType">
+            <flag name="normal" value="0"/>
+            <flag name="border" value="1"/>
+            <flag name="circle" value="2"/>
+            <flag name="oval" value="3"/>
+            <flag name="round" value="4"/>
+            <flag name="shape" value="5"/>
+        </attr>
+
+        <attr name="uiMode">
+            <flag name="image" value="0" />
+            <flag name="text" value="1" />
+        </attr>
+
+        <!--边框宽度-->
+        <attr name="uiBorderWidth" format="dimension"/>
+        <!--边框颜色-->
+        <attr name="uiBorderColor" format="color"/>
+        <!--底部drawable的颜色-->
+        <attr name="uiBottomDrawableColor" format="color"/>
+        <!--展示文字的大小-->
+        <attr name="uiTextSize" format="dimension" />
+        <!--展示文字的颜色-->
+        <attr name="uiTextColor" format="color" />
+        <!--展示的文字文本内容-->
+        <attr name="uiTextContent" format="string"/>
+        <!--圆角大小-->
+        <attr name="uiRound" format="dimension"/>
+    </declare-styleable>
+
+    <!--实现标签列表（内容大小不一排列）-->
+    <declare-styleable name="UITabListView">
+        <!--Tab间距-->
+        <attr name="uiTabSpacing" format="dimension"/>
+        <!--行间距-->
+        <attr name="uiLineSpacing" format="dimension"/>
+        <!--最大行数-->
+        <attr name="uiMaxLines" format="integer"/>
+    </declare-styleable>
+
+
+    <declare-styleable name="PointLoadingView">
+        <!--Tab间距-->
+        <attr name="pointColor" format="color"/>
+    </declare-styleable>
+
+    <declare-styleable name="PointPageIndicator">
+        <attr name="pointDistance" format="dimension"/>
+        <attr name="backPointColor" format="color" />
+        <attr name="backPointRadius" format="dimension" />
+        <attr name="currentPointColor" format="color" />
+        <attr name="currentPointRadius" format="dimension" />
+    </declare-styleable>
+</resources>

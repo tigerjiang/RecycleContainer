@@ -1,6 +1,6 @@
 package com.multimedia.yihuishou.entity;
 //社区
-public class CommunityEntity {
+public class CommunityEntity extends BaseEntity{
 
     /**
      * code : string
@@ -20,17 +20,17 @@ public class CommunityEntity {
 
     private String code;
     private String createTime;
-    private int createUser;
+    private String createUser;
     private String description;
-    private int dictId;
-    private int dictTypeId;
+    private String dictId;
+    private String dictTypeId;
     private String name;
-    private int parentId;
+    private String parentId;
     private String parentIds;
-    private int sort;
+    private String sort;
     private String status;
     private String updateTime;
-    private int updateUser;
+    private String updateUser;
 
     public String getCode() {
         return code;
@@ -48,11 +48,11 @@ public class CommunityEntity {
         this.createTime = createTime;
     }
 
-    public int getCreateUser() {
+    public String getCreateUser() {
         return createUser;
     }
 
-    public void setCreateUser(int createUser) {
+    public void setCreateUser(String createUser) {
         this.createUser = createUser;
     }
 
@@ -64,19 +64,19 @@ public class CommunityEntity {
         this.description = description;
     }
 
-    public int getDictId() {
+    public String getDictId() {
         return dictId;
     }
 
-    public void setDictId(int dictId) {
+    public void setDictId(String dictId) {
         this.dictId = dictId;
     }
 
-    public int getDictTypeId() {
+    public String getDictTypeId() {
         return dictTypeId;
     }
 
-    public void setDictTypeId(int dictTypeId) {
+    public void setDictTypeId(String dictTypeId) {
         this.dictTypeId = dictTypeId;
     }
 
@@ -88,11 +88,11 @@ public class CommunityEntity {
         this.name = name;
     }
 
-    public int getParentId() {
+    public String getParentId() {
         return parentId;
     }
 
-    public void setParentId(int parentId) {
+    public void setParentId(String parentId) {
         this.parentId = parentId;
     }
 
@@ -104,11 +104,11 @@ public class CommunityEntity {
         this.parentIds = parentIds;
     }
 
-    public int getSort() {
+    public String getSort() {
         return sort;
     }
 
-    public void setSort(int sort) {
+    public void setSort(String sort) {
         this.sort = sort;
     }
 
@@ -128,11 +128,11 @@ public class CommunityEntity {
         this.updateTime = updateTime;
     }
 
-    public int getUpdateUser() {
+    public String getUpdateUser() {
         return updateUser;
     }
 
-    public void setUpdateUser(int updateUser) {
+    public void setUpdateUser(String updateUser) {
         this.updateUser = updateUser;
     }
 
@@ -141,17 +141,42 @@ public class CommunityEntity {
         return "CommunityEntity{" +
                 "code='" + code + '\'' +
                 ", createTime='" + createTime + '\'' +
-                ", createUser=" + createUser +
+                ", createUser='" + createUser + '\'' +
                 ", description='" + description + '\'' +
-                ", dictId=" + dictId +
-                ", dictTypeId=" + dictTypeId +
+                ", dictId='" + dictId + '\'' +
+                ", dictTypeId='" + dictTypeId + '\'' +
                 ", name='" + name + '\'' +
-                ", parentId=" + parentId +
+                ", parentId='" + parentId + '\'' +
                 ", parentIds='" + parentIds + '\'' +
-                ", sort=" + sort +
+                ", sort='" + sort + '\'' +
                 ", status='" + status + '\'' +
                 ", updateTime='" + updateTime + '\'' +
-                ", updateUser=" + updateUser +
+                ", updateUser='" + updateUser + '\'' +
                 '}';
+    }
+
+    @Override
+    public String getTitle() {
+        return name;
+    }
+
+    @Override
+    public String getUrl() {
+        return null;
+    }
+
+    @Override
+    public String getSubtitle() {
+        return code;
+    }
+
+    @Override
+    public String getDesc() {
+        return null;
+    }
+
+    @Override
+    public boolean isChecked() {
+        return false;
     }
 }

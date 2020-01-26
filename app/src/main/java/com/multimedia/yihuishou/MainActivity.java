@@ -5,6 +5,8 @@ import android.os.Bundle;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.multimedia.yihuishou.entity.CommunityEntity;
 import com.multimedia.yihuishou.entity.ModelBase;
+import com.multimedia.yihuishou.entity.ProductEntity;
+import com.multimedia.yihuishou.entity.RubblishEntity;
 import com.multimedia.yihuishou.log.LogUtils;
 import com.multimedia.yihuishou.net.NetDataUtils;
 import com.multimedia.yihuishou.view.BaseFragment;
@@ -24,6 +26,7 @@ import android.view.View;
 import android.widget.FrameLayout;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class MainActivity extends AppCompatActivity {
@@ -107,22 +110,9 @@ public class MainActivity extends AppCompatActivity {
         mContainerView = findViewById(R.id.container);
         navView.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
         showFragment(FragmentType.RECYCLE_TYPE);
-        NetDataUtils.getInstance().getCommunityTypeList(new NetDataUtils.RequestResultListener() {
-            @Override
-            public void returnFail(Throwable e) {
 
-            }
 
-            @Override
-            public void returnSuccess() {
 
-            }
-
-            @Override
-            public void parseData(ModelBase<CommunityEntity> T) {
-
-            }
-        });
     }
 
 

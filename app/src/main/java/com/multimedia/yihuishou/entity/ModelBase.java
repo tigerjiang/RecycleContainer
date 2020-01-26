@@ -3,7 +3,9 @@ package com.multimedia.yihuishou.entity;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class ModelBase<T> {
+import java.util.List;
+
+public class ModelBase<T extends BaseEntity> {
     @SerializedName("result")
     @Expose
     private Integer result;
@@ -14,7 +16,7 @@ public class ModelBase<T> {
 
     @SerializedName("data")
     @Expose
-    private T data;
+    private List<T> data;
 
     public Integer getResult() {
         return result;
@@ -32,11 +34,11 @@ public class ModelBase<T> {
         this.msg = msg;
     }
 
-    public T getData() {
+    public List<T> getData() {
         return data;
     }
 
-    public void setData(T data) {
+    public void setData(List<T> data) {
         this.data = data;
     }
 
