@@ -1,6 +1,6 @@
 package com.multimedia.yihuishou.entity;
 
-public class UserEntity extends BaseEntity{
+public class UserEntity extends BaseEntity {
 
     /**
      * account : string
@@ -31,12 +31,12 @@ public class UserEntity extends BaseEntity{
     private String avatar;
     private String birthday;
     private String createTime;
-    private int createUser;
-    private int deptId;
+    private String createUser;
+    private String deptId;
     private String email;
     private String exchangeAuth;
-    private int latitude;
-    private int longitude;
+    private String latitude;
+    private String longitude;
     private String name;
     private String password;
     private String phone;
@@ -46,9 +46,9 @@ public class UserEntity extends BaseEntity{
     private String status;
     private String type;
     private String updateTime;
-    private int updateUser;
-    private int userId;
-    private int version;
+    private String updateUser;
+    private String userId;
+    private String version;
 
     public String getAccount() {
         return account;
@@ -82,19 +82,19 @@ public class UserEntity extends BaseEntity{
         this.createTime = createTime;
     }
 
-    public int getCreateUser() {
+    public String getCreateUser() {
         return createUser;
     }
 
-    public void setCreateUser(int createUser) {
+    public void setCreateUser(String createUser) {
         this.createUser = createUser;
     }
 
-    public int getDeptId() {
+    public String getDeptId() {
         return deptId;
     }
 
-    public void setDeptId(int deptId) {
+    public void setDeptId(String deptId) {
         this.deptId = deptId;
     }
 
@@ -114,19 +114,19 @@ public class UserEntity extends BaseEntity{
         this.exchangeAuth = exchangeAuth;
     }
 
-    public int getLatitude() {
+    public String getLatitude() {
         return latitude;
     }
 
-    public void setLatitude(int latitude) {
+    public void setLatitude(String latitude) {
         this.latitude = latitude;
     }
 
-    public int getLongitude() {
+    public String getLongitude() {
         return longitude;
     }
 
-    public void setLongitude(int longitude) {
+    public void setLongitude(String longitude) {
         this.longitude = longitude;
     }
 
@@ -202,28 +202,69 @@ public class UserEntity extends BaseEntity{
         this.updateTime = updateTime;
     }
 
-    public int getUpdateUser() {
+    public String getUpdateUser() {
         return updateUser;
     }
 
-    public void setUpdateUser(int updateUser) {
+    public void setUpdateUser(String updateUser) {
         this.updateUser = updateUser;
     }
 
-    public int getUserId() {
+    public String getUserId() {
         return userId;
     }
 
-    public void setUserId(int userId) {
+    public void setUserId(String userId) {
         this.userId = userId;
     }
 
-    public int getVersion() {
+    public String getVersion() {
         return version;
     }
 
-    public void setVersion(int version) {
+    public void setVersion(String version) {
         this.version = version;
+    }
+
+    @Override
+    public String toString() {
+        return "UserEntity{" +
+                "account='" + account + '\'' +
+                ", avatar='" + avatar + '\'' +
+                ", birthday='" + birthday + '\'' +
+                ", createTime='" + createTime + '\'' +
+                ", createUser='" + createUser + '\'' +
+                ", deptId='" + deptId + '\'' +
+                ", email='" + email + '\'' +
+                ", exchangeAuth='" + exchangeAuth + '\'' +
+                ", latitude='" + latitude + '\'' +
+                ", longitude='" + longitude + '\'' +
+                ", name='" + name + '\'' +
+                ", password='" + password + '\'' +
+                ", phone='" + phone + '\'' +
+                ", roleId='" + roleId + '\'' +
+                ", salt='" + salt + '\'' +
+                ", sex='" + sex + '\'' +
+                ", status='" + status + '\'' +
+                ", type='" + type + '\'' +
+                ", updateTime='" + updateTime + '\'' +
+                ", updateUser='" + updateUser + '\'' +
+                ", userId='" + userId + '\'' +
+                ", version='" + version + '\'' +
+                '}';
+    }
+
+
+    @Override
+    public boolean equals(Object obj) {
+        if (!(obj instanceof UserEntity)) {
+            return false;
+        }
+        UserEntity entity = (UserEntity) obj;
+        if (entity.name == this.name && entity.account == this.account) {
+            return true;
+        }
+        return false;
     }
 
     @Override

@@ -23,4 +23,104 @@
         <item name="android:windowExitAnimation">@null</item>
         <item name="android:windowTranslucentStatus">true</item>
     </style>
+
+    <!--对话框-->
+    <style name="ui_dialog" parent="@android:style/Theme.Dialog">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowIsTranslucent">false</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+    </style>
+
+
+    <!--对话框——内容区域的统一padding（到屏幕间距还需要加上布局样式中的padding）-->
+    <style name="galleryplus_comm_dialog_inner_padding">
+        <item name="android:layout_marginLeft">@dimen/galleryplus_dp_20</item>
+        <item name="android:layout_marginRight">@dimen/galleryplus_dp_20</item>
+    </style>
+
+
+    <!--对话框标题-->
+    <style name="galleryplus_c_dialog_title_v10">
+        <item name="android:textColor">@color/galleryplus_c_title_text_color_v10</item>
+        <item name="android:textSize">@dimen/galleryplus_sp_15</item>
+    </style>
+    <!--对话框内容-->
+    <style name="galleryplus_c_dialog_content_v10">
+        <item name="android:textColor">@color/galleryplus_c_content_color_v10</item>
+        <item name="android:textSize">@dimen/galleryplus_sp_14_7</item>
+    </style>
+    <!--对话框提示按钮-->
+    <!--对话框确认按钮-->
+    <!--对话框取消按钮-->
+    <!--对话框——按钮-->
+
+    <!--对话框——布局-->
+    <style name="galleryplus_comm_dialog_layout">
+        <item name="android:background">@drawable/galleryplus_shape_dialog_bg_v11</item>
+        <item name="android:paddingTop">@dimen/galleryplus_dp_26</item>
+        <item name="android:paddingBottom">@dimen/galleryplus_dp_18</item>
+        <item name="android:paddingLeft">@dimen/galleryplus_dp_20</item>
+        <item name="android:paddingRight">@dimen/galleryplus_dp_20</item>
+    </style>
+    <!--对话框——标题-->
+    <style name="galleryplus_comm_dialog_title" parent="galleryplus_comm_dialog_inner_padding">
+        <item name="android:textColor">@color/galleryplus_c_title_text_color</item>
+        <item name="android:textSize">@dimen/galleryplus_sp_16_7</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:gravity">center</item>
+        <item name="android:ellipsize">end</item>
+    </style>
+    <!--对话框——警告-->
+    <style name="galleryplus_comm_dialog_alert" parent="galleryplus_comm_dialog_inner_padding">
+        <item name="android:textColor">@color/galleryplus_c_message_color</item>
+        <item name="android:textSize">@dimen/galleryplus_sp_14</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:gravity">center</item>
+        <item name="android:ellipsize">end</item>
+    </style>
+    <!--对话框——内容（代码控制其它属性）-->
+    <style name="galleryplus_comm_dialog_content" parent="galleryplus_comm_dialog_inner_padding">
+        <item name="android:textColor">@color/galleryplus_c_content_color</item>
+        <item name="android:textSize">@dimen/galleryplus_sp_15_3</item>
+    </style>
+    <!--对话框——内容备注（代码控制其它属性）-->
+    <style name="galleryplus_comm_dialog_remark" parent="galleryplus_comm_dialog_inner_padding">
+        <item name="android:textColor">@color/galleryplus_c_black_40</item>
+        <item name="android:textSize">@dimen/galleryplus_sp_14</item>
+        <item name="android:gravity">left</item>
+    </style>
+    <!--对话框——勾选-->
+    <style name="galleryplus_comm_dialog_check" parent="galleryplus_comm_dialog_inner_padding">
+        <item name="android:button">@drawable/galleryplus_selector_check</item>
+        <item name="android:textColor">@color/galleryplus_c_black_40</item>
+        <item name="android:textSize">@dimen/galleryplus_sp_14</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:paddingTop">@dimen/galleryplus_dp_2</item>
+        <item name="android:paddingBottom">@dimen/galleryplus_dp_2</item>
+        <item name="android:paddingRight">@dimen/galleryplus_dp_8</item>
+    </style>
+
+
+    <!--对话框——按钮-->
+    <style name="galleryplus_comm_dialog_btn">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/galleryplus_dp_47</item>
+        <item name="android:background">@drawable/galleryplus_selector_dialog_btn_v11</item>
+        <item name="android:textColor">@color/galleryplus_c_button_text_color</item>
+        <item name="android:textSize">@dimen/galleryplus_sp_15_3</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_margin">@dimen/galleryplus_dp_6</item>
+    </style>
+    <!--对话框——Loading进度-->
+    <style name="galleryplus_comm_dialog_loading_progress" parent="@android:style/Widget.Holo.Light.ProgressBar.Inverse">
+        <item name="android:layout_width">@dimen/galleryplus_dp_20</item>
+        <item name="android:layout_height">@dimen/galleryplus_dp_20</item>
+        <item name="android:layout_marginLeft">@dimen/galleryplus_dp_10</item>
+        <item name="android:layout_marginRight">@dimen/galleryplus_dp_10</item>
+    </style>
+
+
 </resources>

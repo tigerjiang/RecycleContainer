@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="@color/galleryplus_c_dialog_bg" />
+    <corners
+        android:topLeftRadius="@dimen/galleryplus_dp_22"
+        android:topRightRadius="@dimen/galleryplus_dp_22" />
+</shape>

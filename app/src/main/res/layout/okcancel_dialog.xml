@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:layout_width="@dimen/dp_341_3"
+        android:layout_height="@dimen/dp_161_7"
+        android:layout_centerInParent="true"
+        android:layout_margin="@dimen/galleryplus_dp_9.33"
+        android:background="@drawable/galleryplus_shape_dialog_bg_v10">
+
+        <TextView
+            android:id="@+id/v_title"
+            style="@style/galleryplus_c_dialog_title_v10"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="@dimen/galleryplus_dp_25"
+            android:gravity="center"
+            android:maxLines="1"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/v_info"
+            style="@style/galleryplus_c_dialog_content_v10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/v_title"
+            android:layout_marginLeft="@dimen/galleryplus_dp_36_7"
+            android:layout_marginTop="@dimen/galleryplus_dp_19_7"
+            android:layout_marginRight="@dimen/galleryplus_dp_36_7"
+            android:lineSpacingExtra="@dimen/galleryplus_dp_3"
+            android:maxWidth="@dimen/galleryplus_dp_268"
+            android:maxHeight="@dimen/galleryplus_h_dialog_max" />
+
+        <LinearLayout
+            android:id="@+id/button_layout"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/galleryplus_dp_50"
+            android:layout_alignParentBottom="true"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/v_ok"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/galleryplus_com_left_btn_bg"
+                android:gravity="center"
+                android:maxLines="1"
+                android:text="@string/galleryplus_v_ok"
+                android:textColor="@color/galleryplus_c_button_text_color_v10"
+                android:textSize="@dimen/galleryplus_sp_14" />
+
+            <View
+                android:id="@+id/v_vertical_line"
+                android:layout_width="@dimen/galleryplus_px_1"
+                android:layout_height="match_parent"
+                android:layout_weight="0"
+                android:background="@color/galleryplus_c_divider" />
+
+            <TextView
+                android:id="@+id/v_cancel"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/galleryplus_com_right_btn_bg"
+                android:gravity="center"
+                android:maxLines="1"
+                android:text="@string/galleryplus_v_cancel"
+                android:textColor="@color/galleryplus_dialog_miui_ok_color"
+                android:textSize="@dimen/galleryplus_sp_14" />
+        </LinearLayout>
+
+        <View
+            android:id="@+id/v_horizontal_line"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/galleryplus_px_1"
+            android:layout_above="@+id/button_layout"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="@dimen/galleryplus_dp_50"
+            android:background="@color/galleryplus_c_divider" />
+    </RelativeLayout>
+</RelativeLayout>

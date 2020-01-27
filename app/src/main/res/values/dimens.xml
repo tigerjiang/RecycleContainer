@@ -1,10 +1,12 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Default screen margins, per the Android Design guidelines. -->
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
     <dimen name="d_ui_parent_padding_width_8">8dp</dimen>
     <dimen name="d_ui_parent_padding_width_13">13dp</dimen>
     <dimen name="sp_12">12sp</dimen>
+    <dimen name="sp_14">14sp</dimen>
+    <dimen name="sp_16">16sp</dimen>
     <dimen name="px_1">1px</dimen>
     <!-- 界面dip值 -->
     <dimen name="dp_2F">-2dp</dimen>
@@ -351,4 +353,238 @@
     <dimen name="size_240">80dp</dimen>
     <dimen name="size_540">180dp</dimen>
     <dimen name="size_620">206.67dp</dimen>
+
+    <!-- 界面dip值 -->
+    <dimen name="galleryplus_dp_1_2">1.2dp</dimen>
+    <dimen name="galleryplus_dp_0_3">0.3dp</dimen>
+    <dimen name="galleryplus_dp_0.36" tools:ignore="MissingDefaultResource">0.36dp</dimen>
+    <dimen name="galleryplus_dp_0_67">0.67dp</dimen>
+    <dimen name="galleryplus_dp_0.7" tools:ignore="MissingDefaultResource">0.7dp</dimen>
+    <dimen name="galleryplus_dp_1">1dp</dimen>
+    <dimen name="galleryplus_dp_1_3">1.3dp</dimen>
+    <dimen name="galleryplus_dp_1_5">1.5dp</dimen>
+    <dimen name="galleryplus_dp_2">2dp</dimen>
+    <dimen name="galleryplus_dp_2_7">2.7dp</dimen>
+    <dimen name="galleryplus_dp_3">3dp</dimen>
+    <dimen name="galleryplus_dp_3_3">3.3dp</dimen>
+    <dimen name="galleryplus_dp_3.33" tools:ignore="MissingDefaultResource">3.33dp</dimen>
+    <dimen name="galleryplus_dp_4">4dp</dimen>
+    <dimen name="galleryplus_dp_4_27">4.27dp</dimen>
+    <dimen name="galleryplus_dp_4_7">4.7dp</dimen>
+    <dimen name="galleryplus_dp_4_87">4.87dp</dimen>
+    <dimen name="galleryplus_dp_5">5dp</dimen>
+    <dimen name="galleryplus_dp_5.33" tools:ignore="MissingDefaultResource">5.33dp</dimen>
+    <dimen name="galleryplus_dp_5_3">5.3dp</dimen>
+    <dimen name="galleryplus_dp_5_67">5.67dp</dimen>
+    <dimen name="galleryplus_dp_6">6dp</dimen>
+    <dimen name="galleryplus_dp_6.67" tools:ignore="MissingDefaultResource">6.67dp</dimen>
+    <dimen name="galleryplus_dp_8">8dp</dimen>
+    <dimen name="galleryplus_dp_5_10">5.10dp</dimen>
+    <dimen name="galleryplus_dp_8_34">8.34dp</dimen>
+    <dimen name="galleryplus_dp_9_3">9.3dp</dimen>
+    <dimen name="galleryplus_dp_9.33" tools:ignore="MissingDefaultResource">9.33dp</dimen>
+    <dimen name="galleryplus_dp_9_6">9.6dp</dimen>
+    <dimen name="galleryplus_dp_10">10dp</dimen>
+    <dimen name="galleryplus_dp_10_5">10.5dp</dimen>
+    <dimen name="galleryplus_dp_11">11dp</dimen>
+    <dimen name="galleryplus_dp_11_3">11.3dp</dimen>
+    <dimen name="galleryplus_dp_11.33" tools:ignore="MissingDefaultResource">11.33dp</dimen>
+    <dimen name="galleryplus_dp_11_7">11.7dp</dimen>
+    <dimen name="galleryplus_dp_12">12dp</dimen>
+    <dimen name="galleryplus_dp_12.33" tools:ignore="MissingDefaultResource">12.33dp</dimen>
+    <dimen name="galleryplus_dp_12_5">12.5dp</dimen>
+    <dimen name="galleryplus_dp_13">13dp</dimen>
+    <dimen name="galleryplus_dp_13_3">13.3dp</dimen>
+    <dimen name="galleryplus_dp_13_33">13.33dp</dimen>
+    <dimen name="galleryplus_dp_14_7">14.7dp</dimen>
+    <dimen name="galleryplus_dp_15_3">15.3dp</dimen>
+    <dimen name="galleryplus_dp_16">16dp</dimen>
+    <dimen name="galleryplus_dp_16_33">16.33dp</dimen>
+    <dimen name="galleryplus_dp_16_5">16.5dp</dimen>
+    <dimen name="galleryplus_dp_16.67" tools:ignore="MissingDefaultResource">16.67dp</dimen>
+    <dimen name="galleryplus_dp_17_7">17.7dp</dimen>
+    <dimen name="galleryplus_dp_18">18dp</dimen>
+    <dimen name="galleryplus_dp_19_7">19.7dp</dimen>
+    <dimen name="galleryplus_dp_20" tools:ignore="DuplicateDefinition">20dp</dimen>
+    <dimen name="galleryplus_dp_20_3">20.3dp</dimen>
+    <dimen name="galleryplus_dp_20.67" tools:ignore="MissingDefaultResource">20.67dp</dimen>
+    <dimen name="galleryplus_dp_20_7">20.7dp</dimen>
+    <dimen name="galleryplus_dp_22">22dp</dimen>
+    <dimen name="galleryplus_dp_22.67" tools:ignore="MissingDefaultResource">22.67dp</dimen>
+    <dimen name="galleryplus_dp_23">23dp</dimen>
+    <dimen name="galleryplus_dp_23_7">23.7dp</dimen>
+    <dimen name="galleryplus_dp_24_3">24.3dp</dimen>
+    <dimen name="galleryplus_dp_24_7">24.7dp</dimen>
+    <dimen name="galleryplus_dp_25">25dp</dimen>
+    <dimen name="galleryplus_dp_25_7">25.7dp</dimen>
+    <dimen name="galleryplus_dp_26">26dp</dimen>
+    <dimen name="galleryplus_dp_26_7">26.7dp</dimen>
+    <dimen name="galleryplus_dp_27">27dp</dimen>
+    <dimen name="galleryplus_dp_30">30dp</dimen>
+    <dimen name="galleryplus_dp_32_67">32.67dp</dimen>
+    <dimen name="galleryplus_dp_33_3">33.3dp</dimen>
+    <dimen name="galleryplus_dp_33.33" tools:ignore="MissingDefaultResource">33.33dp</dimen>
+    <dimen name="galleryplus_dp_34">34dp</dimen>
+    <dimen name="galleryplus_dp_35_33">35.33dp</dimen>
+    <dimen name="galleryplus_dp_35_39">35.39dp</dimen>
+    <dimen name="galleryplus_dp_36.67" tools:ignore="MissingDefaultResource">36.67dp</dimen>
+    <dimen name="galleryplus_dp_37">37dp</dimen>
+    <dimen name="galleryplus_dp_38_3">38.3dp</dimen>
+    <dimen name="galleryplus_dp_38_66">38.66dp</dimen>
+    <dimen name="galleryplus_dp_39">39dp</dimen>
+    <dimen name="galleryplus_dp_45">45dp</dimen>
+    <dimen name="galleryplus_dp_46_7">46.7dp</dimen>
+    <dimen name="galleryplus_dp_47">47dp</dimen>
+    <dimen name="galleryplus_dp_48">48dp</dimen>
+    <dimen name="galleryplus_dp_50">50dp</dimen>
+    <dimen name="galleryplus_dp_50_3">50.3dp</dimen>
+    <dimen name="galleryplus_dp_53">53dp</dimen>
+    <dimen name="galleryplus_dp_55_33">55.33dp</dimen>
+    <dimen name="galleryplus_dp_56">56dp</dimen>
+    <dimen name="galleryplus_dp_58_7">58.7dp</dimen>
+    <dimen name="galleryplus_dp_59_03">59.03dp</dimen>
+    <dimen name="galleryplus_dp_59_7">59.7dp</dimen>
+    <dimen name="galleryplus_dp_60">60dp</dimen>
+    <dimen name="galleryplus_dp_65_3">65.3dp</dimen>
+    <dimen name="galleryplus_dp_66">66dp</dimen>
+    <dimen name="galleryplus_dp_67_3">67.3dp</dimen>
+    <dimen name="galleryplus_dp_74">74dp</dimen>
+    <dimen name="galleryplus_dp_77">77dp</dimen>
+    <dimen name="galleryplus_dp_77_45">77.45dp</dimen>
+    <dimen name="galleryplus_dp_86_3">86.3dp</dimen>
+    <dimen name="galleryplus_dp_92_7">92.7dp</dimen>
+    <dimen name="galleryplus_dp_100">100dp</dimen>
+    <dimen name="galleryplus_dp_105">105dp</dimen>
+    <dimen name="galleryplus_dp_138_33">138.33dp</dimen>
+    <dimen name="galleryplus_dp_150">150dp</dimen>
+    <dimen name="galleryplus_dp_161_7">161.7dp</dimen>
+    <dimen name="galleryplus_dp_167_3">167.3dp</dimen>
+    <dimen name="galleryplus_dp_175_34">175.34dp</dimen>
+    <dimen name="galleryplus_dp_200">200dp</dimen>
+    <dimen name="galleryplus_dp_311_33">311.33dp</dimen>
+    <dimen name="galleryplus_dp_341_3">341.3dp</dimen>
+    <dimen name="galleryplus_dp_360">360dp</dimen>
+    <dimen name="galleryplus_dp_477">477dp</dimen>
+    <dimen name="galleryplus_dp_28_7">28.7dp</dimen>
+    <dimen name="galleryplus_dp_29">29dp</dimen>
+    <dimen name="galleryplus_dp_21">21dp</dimen>
+    <dimen name="galleryplus_dp_14_63">14.63dp</dimen>
+    <dimen name="galleryplus_dp_3_5">3.5dp</dimen>
+    <dimen name="galleryplus_dp_6.5" tools:ignore="MissingDefaultResource">6.5dp</dimen>
+    <dimen name="galleryplus_dp_32_3">32.3dp</dimen>
+    <dimen name="galleryplus_dp_14_4">14.4dp</dimen>
+    <dimen name="galleryplus_dp_40">40dp</dimen>
+    <dimen name="galleryplus_dp_8_7">8.7dp</dimen>
+    <dimen name="galleryplus_dp_72_7">72.7dp</dimen>
+    <!-- pulltorefresh -->
+    <dimen name="galleryplus_lp_ctrl_bottom_seekbar_height">1.30dp</dimen>
+    <dimen name="galleryplus_lp_ctrl_bottom_silient_right">10dp</dimen>
+
+    <dimen name="galleryplus_px_1">1px</dimen>
+    <dimen name="galleryplus_d_ui_4">4dp</dimen>
+    <dimen name="galleryplus_d_ui_20">20dp</dimen>
+
+    <dimen name="galleryplus_h_dialog_max">200dp</dimen>
+    <dimen name="galleryplus_h_ui_actionbar">54dp</dimen>
+
+    <dimen name="galleryplus_d_dialog_title_margin_top">10dp</dimen>
+
+    <dimen name="galleryplus_comm_vp_topbar_height">58.33dp</dimen>
+
+    <dimen name="galleryplus_comm_font_size_11">11dp</dimen>
+
+    <dimen name="galleryplus_dp_36_7">36.7dp</dimen>
+    <dimen name="galleryplus_dp_268">268dp</dimen>
+
+    <dimen name="galleryplus_progressbar_horizontal_indeterminate_height">10dp</dimen>
+    <dimen name="galleryplus_progressbar_horizontal_indeterminate_max_height">25dp</dimen>
+
+    <dimen name="galleryplus_frame_controller_center_width">18dp</dimen>
+    <dimen name="galleryplus_gallery_edit_bottom_panel_height">177.3dp</dimen>
+    <dimen name="galleryplus_gallery_edit_top_panel_padding">24.67dp</dimen>
+    <dimen name="galleryplus_gallery_edit_play_btn_size">47.3dp</dimen>
+    <dimen name="galleryplus_gallery_edit_bottom_menu_height">30dp</dimen>
+    <dimen name="galleryplus_gallery_edit_bottom_menu_margin_vertical">14.3dp</dimen>
+    <dimen name="galleryplus_gallery_edit_bottom_menu_margin_horizontal">18.3dp</dimen>
+    <dimen name="galleryplus_gallery_edit_bottom_controller_padding_horizontal">23dp</dimen>
+    <dimen name="galleryplus_gallery_edit_speed_controller_height">44dp</dimen>
+    <dimen name="galleryplus_gallery_edit_speed_controller_margin_top">21.33dp</dimen>
+
+    <!-- subtitle edit begin-->
+    <!-- recycler view 上方， 字幕编辑title-->
+    <dimen name="galleryplus_subtitle_op_title_size">14sp</dimen>
+    <!-- recycler view 上方， 字幕文字大小, 横屏-->
+    <dimen name="galleryplus_subtitle_op_subtitle_text_size_horizontal">13.8sp</dimen>
+    <!-- recycler view 上方， 字幕文字大小, 竖屏-->
+    <!-- 字幕recycler view item第二行文字大小-->
+    <dimen name="galleryplus_op_rv_item_timestamp_text_size">9.3sp</dimen>
+    <!-- 字幕recycler view item第一行文字大小-->
+    <dimen name="galleryplus_op_rv_item_text_size">12sp</dimen>
+
+    <!-- recycler view 加上 title 的整个container的高度-->
+    <dimen name="galleryplus_op_area_title_and_rv_c_height">179dp</dimen>
+    <!-- recycler view item 的高度-->
+    <!-- operation area， title的marginTop-->
+    <dimen name="galleryplus_subtitle_op_title_margin_top">13.3dp</dimen>
+    <!-- operation area， recycler view的marginTop-->
+    <dimen name="galleryplus_subtitle_op_rv_margin_top_new">10dp</dimen>
+    <!--popup edit window, 编辑框字体大小-->
+    <dimen name="galleryplus_subtitle_popup_edit_textsize">16.7sp</dimen>
+    <!--popup edit window, 编辑框左右margin-->
+    <dimen name="galleryplus_subtitle_popup_et_margin_left">49.3dp</dimen>
+    <!--popup edit window, 下方title 字体大小-->
+    <dimen name="galleryplus_subtitle_popup_tv_title_text_size">14sp</dimen>
+    <!--popup edit window, 下方title 剩余可输入字数 字体大小-->
+    <!-- subtitle edit end-->
+
+    <!-- The text size of medium text. -->
+    <dimen name="galleryplus_v10_title_text_size">16sp</dimen>
+    <!-- The text size of dialog title text. -->
+
+    <dimen name="galleryplus_subtitle_text_size">12.67sp</dimen>
+    <!-- The text size of most prominent text. -->
+
+    <!-- The text size of dialog title text. -->
+
+    <dimen name="galleryplus_v11_title_text_size">18sp</dimen>
+    <dimen name="galleryplus_subtitle_op_title_leftimg_width">30dp</dimen>
+    <dimen name="galleryplus_subtitle_rv_item_text1_height">34dp</dimen>
+    <!--背景图片宽度， 包含阴影-->
+    <dimen name="galleryplus_subtitle_rv_item_bg_width">153.7dp</dimen>
+    <!--背景图片高度， 包含阴影-->
+    <dimen name="galleryplus_subtitle_rv_item_bg_height">105.8dp</dimen>
+    <dimen name="galleryplus_subtitle_rv_item_text1_width">113.3dp</dimen>
+    <!-- 同上一条，带阴影的背景，需要减2dp -->
+    <dimen name="galleryplus_subtitle_rv_item_text2_margin_top_bg">11.3dp</dimen>
+    <dimen name="galleryplus_subtitle_rv_item_text2_margin_bottom">16.7dp</dimen>
+    <!-- 用带阴影的图，阴影21px, marginTop需要加7, 21/3, 16+7=23dp -->
+    <dimen name="galleryplus_subtitle_rv_item_text1_margin_top_bg">23dp</dimen>
+    <dimen name="galleryplus_subtitle_rv_item_text1_margin_start">18.7dp</dimen>
+    <dimen name="galleryplus_subtitle_op_title_leftimg_left_margin">18.3dp</dimen>
+
+    <dimen name="galleryplus_video_subtitle_margin_bottom">179.33dp</dimen>
+    <dimen name="galleryplus_video_subtitle_margin_bottom_land_space">117dp</dimen>
+    <!--右上角 隐藏字幕按钮 字体大小-->
+    <!--右上角 隐藏字幕按钮 按钮高度-->
+
+    <dimen name="galleryplus_specify_type_enter_bg_height_cn">23.33dp</dimen>
+    <dimen name="galleryplus_specify_type_enter_text_padding_start">10.1dp</dimen>
+    <dimen name="galleryplus_specify_type_enter_text_drawable_padding">1.8dp</dimen>
+    <dimen name="galleryplus_specify_type_enter_text_padding_end">11dp</dimen>
+    <dimen name="galleryplus_specify_type_enter_text_size">10.63sp</dimen>
+
+    <!-- 视频标签operate区域 container总高度 标注给的是123.3dp， 实际采用123.6dp 才能对应到 370px-->
+    <dimen name="galleryplus_tag_operate_c_height2">123.6dp</dimen>
+    <!-- 视频标签operate区域 container总高度 横屏 -->
+    <dimen name="galleryplus_tag_operate_c_height_land">86.7dp</dimen>
+    <dimen name="galleryplus_gallery_tag_rv_item_c_width">66.7dp</dimen>
+    <!-- 左右各3.35dp, 3.35*2=6.7 -->
+    <dimen name="galleryplus_gallery_tag_rv_item_left_margin">3.35dp</dimen>
+    <!-- 视频标签end -->
+    <dimen name="galleryplus_tag_operate_folds_view_height">36.7dp</dimen>
+    <dimen name="galleryplus_video_tags_radius">3.33dp</dimen>
+    <dimen name="galleryplus_video_tags_stroke_size">2px</dimen>
+    <dimen name="galleryplus_video_tags_height">6.66dp</dimen>
+    <dimen name="galleryplus_video_tags_margin_top">4.67dp</dimen>
+
 </resources>

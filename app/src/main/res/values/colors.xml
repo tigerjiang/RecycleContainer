@@ -43,5 +43,217 @@
     <color name="viewfinder_laser">#ffcc0000</color> <!-- Android standard ICS color -->
     <color name="viewfinder_mask">#60000000</color>
 
+    <color name="green">#4CAF50</color>
+    <color name="red">#FF6347</color>
 
+    <color name="white">#ffffff</color>
+    <color name="gray">#ededed</color>
+    <color name="trans">#33000000</color>
+    <color name="black">#000000</color>
+    <color name="black1">#88000000</color>
+
+    <color name="pickerview_timebtn_nor">#057dff</color>
+    <color name="pickerview_timebtn_pre">#c2daf5</color>
+    <color name="pickerview_bg_topbar">#f5f5f5</color>
+    <color name="pickerview_topbar_title">#000000</color>
+    <color name="pickerview_wheelview_textcolor_out">#a8a8a8</color>
+    <color name="pickerview_wheelview_textcolor_center">#2a2a2a</color>
+    <color name="pickerview_wheelview_textcolor_divider">#d5d5d5</color>
+    <!--覆盖颜色-->
+    <color name="bgColor_overlay">#60000000</color>
+    <color name="common_h2">#727272</color>
+    <color name="dividerColor">#dedede</color>
+
+    <!--Core颜色（颜色控制在0-10以内）-->
+
+    <!--频道背景-->
+
+    <!--黑色-->
+    <color name="galleryplus_common_c_0">#000000</color>
+    <!--间隔线（10%黑）-->
+    <!--间隔线（20%黑）-->
+    <color name="galleryplus_c_2">#33000000</color>
+    <color name="galleryplus_common_40_black">#66000000</color>
+    <color name="galleryplus_common_black">#000000</color>
+
+    <color name="galleryplus_dialog_miui_ok_color">#FF0099FF</color>
+    <color name="galleryplus_dialog_miui_cancel_color">#ff636363</color>
+    <!--通用颜色-->
+    <color name="galleryplus_c_white">#FFFFFF</color>
+    <color name="galleryplus_c_black">#000000</color>
+
+    <!-- 白色（透明度，不建议使用）-->
+    <color name="galleryplus_c_white_60">#99ffffff</color>
+
+    <!-- 黑色（透明度，不建议使用）-->
+    <color name="galleryplus_c_black_80">#cc000000</color>
+    <color name="galleryplus_c_black_60">#99000000</color>
+    <color name="galleryplus_c_black_40">#66000000</color>
+    <color name="galleryplus_c_black_30">#4c000000</color>
+    <color name="galleryplus_c_black_10">#19000000</color>
+
+
+    <color name="galleryplus_c_dialog_bg">#FFFFFF</color>
+    <color name="galleryplus_c_title_text_color">#000000</color>
+    <color name="galleryplus_c_message_color">#FFFE3D28</color>
+    <color name="galleryplus_c_content_color">#B3000000</color>
+    <color name="galleryplus_c_button_text_color">#B2000000</color>
+    <color name="galleryplus_c_button_default_color">#0A000000</color>
+    <color name="galleryplus_c_button_selected_color">#FFE0E0E0</color>
+
+    <color name="galleryplus_c_title_text_color_v10">#FF000000</color>
+    <color name="galleryplus_c_content_color_v10">#CD000000</color>
+    <color name="galleryplus_c_button_text_color_v10">#FF000000</color>
+    <color name="galleryplus_c_button_default_color_v10">#FFFFFF</color>
+    <color name="galleryplus_c_button_selected_color_v10">#19000000</color>
+    <color name="galleryplus_c_divider">#33000000</color>
+
+    <!--对话框标题颜色-->
+
+    <!--一级标题（深灰）-->
+    <color name="galleryplus_c_3">#e6000000</color>
+    <!--二级标题（浅灰）-->
+    <color name="galleryplus_c_4">#7f000000</color>
+    <color name="galleryplus_color_fbfbfb">#fbfbfb</color>
+    <color name="galleryplus_color_a6ffffff">#a6ffffff</color>
+
+    <color name="galleryplus_toast_color_v11">#cc000000</color>
+    <color name="galleryplus_toast_color_v10">#CCFFFFFF</color>
+    <color name="galleryplus_toast_bg_color_v10">#E64F4F4F</color>
+    <color name="galleryplus_c_black_20">#33000000</color>
+    <!--APP-->
+    <!--首页TOP背景-->
+    <!--边线颜色-->
+    <!--高亮文字颜色-->
+    <!--搜索框背景-->
+    <!--搜索框边线-->
+    <!--黑色（40%）-->
+    <!--黑色（80%）-->
+    <!--黑色（20%）-->
+
+    <color name="galleryplus_c_5">#29A5ED</color>
+    <color name="galleryplus_c_9">#33262935</color>
+
+    <color name="galleryplus_black">#ff000000</color>
+
+    <color name="galleryplus_black_25_transparent">#40000000</color>
+
+
+    <color name="galleryplus_gallery_top_bar_bg">#FFFFFFFF</color>
+    <color name="galleryplus_gallery_top_bar_divider">#FFE5E5E5</color>
+    <color name="galleryplus_gallery_top_bar_title">#FF000000</color>
+    <color name="galleryplus_gallery_top_bar_subtitle">#FF636465</color>
+    <color name="galleryplus_gallery_top_bar_subtitle_divider">#FFCACBCE</color>
+    <color name="galleryplus_gallery_bottom_bar_bg">#FFFFFFFF</color>
+    <color name="galleryplus_gallery_bottom_bar_divider">#FFE5E5E5</color>
+    <color name="galleryplus_gallery_edit_btn_stroke_color">#1a000000</color>
+    <color name="galleryplus_gallery_edit_top_panel_bg">#FFF7F7F7</color>
+    <color name="galleryplus_gallery_edit_bottom_panel_bg">#FFFFFFFF</color>
+    <color name="galleryplus_gallery_edit_bottom_menu_text_color">#FF171616</color>
+    <color name="galleryplus_gallery_duration_stroke_color">#33000000</color>
+    <color name="galleryplus_gallery_duration_solid_color">#CCFFFFFF</color>
+    <color name="galleryplus_gallery_duration_divider_color">#4D000000</color>
+    <color name="galleryplus_gallery_duration_text_color">#FF000000</color>
+    <color name="galleryplus_gallery_speed_cursor_color">#FF505050</color>
+    <color name="galleryplus_gallery_speed_dash_color">#FFB7B7B7</color>
+    <color name="galleryplus_gallery_edit_tab_normal_color">#FF171616</color>
+    <color name="galleryplus_gallery_edit_tab_checked_color">#FF1AA1FF</color>
+    <color name="galleryplus_gallery_edit_music_desc_normal_color">#FF0D0D0D</color>
+    <color name="galleryplus_gallery_edit_music_desc_selected_color">#FF1AA1FF</color>
+    <color name="galleryplus_gallery_save_dialog_bg">#FFFFFFFF</color>
+    <color name="galleryplus_gallery_save_dialog_text">#FF000000</color>
+    <color name="galleryplus_gallery_save_dialog_percent">#FF0099FF</color>
+    <color name="galleryplus_gallery_save_dialog_text_v11">#B3000000</color>
+    <color name="galleryplus_gallery_save_dialog_percent_v11">#FF0097FF</color>
+    <color name="galleryplus_gallery_8k_frame_color">#FFF5F5F5</color>
+    <color name="galleryplus_gallery_8k_frame_divider_color">#FFFFFFFF</color>
+    <color name="galleryplus_gallery_img_edit_bg">#f2ffffff</color>
+    <!-- subtitle edit begin-->
+    <!-- 字幕编辑控制区域整体背景 -->
+    <color name="galleryplus_subtitle_op_area_bg">#FAFFFFFF</color>
+    <!-- recycler view 为空时的提示-->
+    <color name="galleryplus_subtitle_op_list_empty_msg">#80171616</color>
+    <!-- 字幕recycler view item背景色，-->
+    <color name="galleryplus_op_rv_item_bg_color">#ffffff</color>
+    <!-- 字幕recycler view item第一行文字颜色-->
+    <color name="galleryplus_op_rv_item_text_color">#E6000000</color>
+    <!-- 字幕recycler view item第二行文字颜色-->
+    <color name="galleryplus_op_rv_item_timestamp_text_color">#B3000000</color>
+    <!-- 字幕recycler view item 选中时背景框颜色-->
+    <color name="galleryplus_op_rv_item_frame_sel_color">#FF0099FF</color>
+    <!-- 字幕recycler view item 未选中时背景框颜色-->
+    <color name="galleryplus_op_rv_item_frame_unsel_color">#26000000</color>
+    <!-- recycler view 上方， 字幕编辑title-->
+    <color name="galleryplus_subtitle_op_title">#FF171616</color>
+    <!-- recycler view 上方， 字幕文字-->
+    <color name="galleryplus_subtitle_op_subtitle_text">#FFFFFFFF</color>
+    <!--popup edit window, 下方title, 剩余可输入字数 字体颜色-->
+    <color name="galleryplus_subtitle_popup_title_remain_num_color">#33000000</color>
+    <!--popup edit window,文字颜色-->
+    <color name="galleryplus_subtitle_popup_text_color">#B3000000</color>
+    <!--popup edit window, 背景颜色-->
+    <color name="galleryplus_subtitle_popup_bg_color">#FAFFFFFF</color>
+    <!--popup edit window， 光标颜色  -->
+    <color name="galleryplus_subtitle_popup_cursor_color">#FF0097FF</color>
+    <!-- 右上角 显示字幕/隐藏字幕 字体颜色  -->
+    <color name="galleryplus_subtitle_btn_display_hide_text_color">#FF404040</color>
+    <!-- 右上角 显示字幕/隐藏字幕 背景颜色  -->
+    <color name="galleryplus_subtitle_btn_display_hide_bg_solid_color">#FFFFFFFF</color>
+    <!-- 右上角 显示字幕/隐藏字幕 stroke颜色  -->
+    <color name="galleryplus_subtitle_btn_display_hide_bg_stroke_color">#40000000</color>
+    <!-- 右上角 显示字幕/隐藏字幕 背景颜色 pressed状态  -->
+
+    <!--隐藏字幕时-->
+    <color name="galleryplus_op_rv_item_text_color_hide">#45000000</color>
+    <!-- 字幕recycler view item第二行文字颜色-->
+    <color name="galleryplus_op_rv_item_timestamp_text_color_hide">#36000000</color>
+    <!-- 字幕recycler view item 隐藏字幕时 背景框颜色-->
+    <!--popup edit window, 编辑框字体颜色-->
+    <!--popup edit window, 下方title 字体颜色-->
+    <color name="galleryplus_subtitle_popup_title_tv_color">#FF171616</color>
+    <!--隐藏字幕时end-->
+    <!-- subtitle edit end-->
+
+    <color name="galleryplus_action_bar_subtitle_text_light">#7f000000</color>
+    <!-- Action bar text color for light theme -->
+    <color name="galleryplus_action_bar_title_text_light">#ff000000</color>
+    <color name="galleryplus_special_type_enter_text_color">#D9000000</color>
+    <color name="galleryplus_special_type_enter_bg_stroke">#1a000000</color>
+    <color name="galleryplus_special_type_enter_bg_solid_pressed">#d9f2f2f2</color>
+    <color name="galleryplus_special_type_enter_bg_solid_normal">#f2ffffff</color>
+    <color name="galleryplus_progressbar_horizontal_bg_color_v11">#FFF1F1F1</color>
+    <color name="galleryplus_progressbar_horizontal_color_v11">#FF0097FF</color>
+
+    <color name="galleryplus_gallery_tag_dft_bg">#FFF1F2F3</color>
+    <color name="galleryplus_gallery_tag_controller_bg_color">#FAFFFFFF</color>
+    <color name="galleryplus_gallery_miui11_blue_sel_color">#0097ff</color>
+    <color name="galleryplus_gallery_mask_solid_color">#ffffff</color>
+    <color name="galleryplus_photo_page_video_tags_color_selected">#0097FF</color>
+    <color name="galleryplus_photo_page_video_tags_color_normal">#FFFFFFFF</color>
+    <color name="galleryplus_photo_page_video_tags_stroke_selected">#FFFFFFFF</color>
+    <color name="galleryplus_photo_page_video_tags_stroke_normal">#33000000</color>
+
+    <!-- 8k截图 -->
+    <!-- 8k截图 -->
+    <color name="galleryplus_snapshot_top_bar_bg_solid_normal">#D9FFFFFF</color>
+    <color name="galleryplus_snapshot_top_bar_bg_solid_pressed">#EBEBEB</color>
+    <color name="galleryplus_snapshot_top_bar_bg_stroke_normal">#1A000000</color>
+    <color name="galleryplus_snapshot_top_bar_bg_stroke_pressed">#1A000000</color>
+    <color name="galleryplus_snapshot_top_bar_text_color_normal">#D9000000</color>
+    <color name="galleryplus_snapshot_top_bar_text_color_pressed">#D9000000</color>
+    <color name="galleryplus_snapshot_activity_bg">#FFFFFFFF</color>
+    <color name="galleryplus_snapshot_img_border_color">#1A000000</color>
+    <color name="galleryplus_snapshot_8k_save_title">#B3000000</color>
+    <color name="galleryplus_snapshot_8k_save_toast_bg_solid">#F7FFFFFF</color>
+    <color name="galleryplus_snapshot_8k_save_toast_bg_stroke">#1A000000</color>
+    <color name="galleryplus_snapshot_8k_save_toast_text">#FF000000</color>
+
+    <color name="galleryplus_snapshot_8k_save_toast_bg_solid_v10">#FF4F4F4F</color>
+
+    <color name="galleryplus_video_type_icon_text">#FF2D2D2D</color>
+    <color name="galleryplus_video_type_icon_bg_stroke">#26000000</color>
+    <color name="galleryplus_video_type_icon_solid">#99FFFFFF</color>
+
+    <color name="galleryplus_snapshot_8k_current_time">#FF000000</color>
+    <color name="galleryplus_snapshot_8k_progress_bar_bg">#FFE3E3E3</color>
 </resources>

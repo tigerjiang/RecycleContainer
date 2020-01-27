@@ -1,7 +1,5 @@
 package com.multimedia.yihuishou.view;
 
-import android.view.View;
-
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -38,8 +36,11 @@ public class QueryFragment extends BaseFragment {
         // 设置布局管理器
         vUIRecyclerView.setLayoutManager(layoutManager);
 
+        RecycleViewDivider itemDivider = new RecycleViewDivider(mContext, LinearLayoutManager.HORIZONTAL, 2,
+                getResources().getColor(R.color.dividerColor));
+        itemDivider.setDrawLastItem(false);
         // 设置分隔线
-        vUIRecyclerView.addItemDecoration(new LinearLayoutItemDecoration(mContext.getResources().getDimensionPixelOffset(R.dimen.dp_13_3), false));
+        vUIRecyclerView.addItemDecoration(itemDivider);
         // 设置增加或删除条目的动画
         vUIRecyclerView.setItemAnimator(new DefaultItemAnimator());
 
@@ -47,7 +48,7 @@ public class QueryFragment extends BaseFragment {
         mGeneralAdapter.setOnItemClickListener(new GeneralAdapter.OnItemClickListener() {
             @Override
             public void onItemClickListener(int position) {
-                requestScanQR();
+//                requestScanQR();
             }
         });
         // 设置Adapter
@@ -66,7 +67,7 @@ public class QueryFragment extends BaseFragment {
     private void getCommunityData() {
         NetDataUtils.getInstance().getCommunityTypeList(new NetDataUtils.RequestResultListener<CommunityEntity>() {
             @Override
-            public void returnFail(Throwable e) {
+            public void returnFail(String msg) {
 
             }
 

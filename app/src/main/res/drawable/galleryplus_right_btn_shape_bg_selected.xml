@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <solid android:color="@color/galleryplus_c_button_selected_color_v10" />
+
+    <corners android:bottomRightRadius="@dimen/galleryplus_dp_9_3" />
+
+</shape>

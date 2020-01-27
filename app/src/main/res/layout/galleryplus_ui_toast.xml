@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/galleryplus_shape_bg_toast"
+    android:gravity="center"
+    android:minHeight="40dp">
+
+    <TextView
+        android:id="@+id/v_toast"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:maxWidth="@dimen/galleryplus_dp_167_3"
+        android:gravity="center"
+        android:layout_marginStart="@dimen/galleryplus_dp_13_33"
+        android:layout_marginTop="@dimen/galleryplus_dp_11.33"
+        android:layout_marginEnd="@dimen/galleryplus_dp_13_33"
+        android:layout_marginBottom="@dimen/galleryplus_dp_11.33"
+        android:textSize="@dimen/galleryplus_sp_12_4"
+        android:textColor="@color/galleryplus_toast_color_v10" />
+
+</LinearLayout>

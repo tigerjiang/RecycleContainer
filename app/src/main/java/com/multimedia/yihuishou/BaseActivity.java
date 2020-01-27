@@ -5,13 +5,13 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.multimedia.yihuishou.entity.ResidentEntity;
+import com.multimedia.yihuishou.log.LogUtils;
 import com.multimedia.yihuishou.net.NetDataUtils;
 import com.multimedia.yihuishou.utils.Constant;
 import com.multimedia.yihuishou.utils.DataUtils;
@@ -22,12 +22,13 @@ import java.util.List;
 
 
 public abstract class BaseActivity  extends AppCompatActivity {
+    private static final String TAG = "BaseActivity";
 
     private ViewGroup mContainerView ;
     private TextView mTitleView, mNameView, mAddressView, mIntegralView;
     private ImageButton mBackView;
     private UIImageView mHeadIcon;
-    protected String mCardId;
+    protected String mCardNo;
     protected ResidentEntity mResidentEntity;
 
     @Override
@@ -52,10 +53,10 @@ public abstract class BaseActivity  extends AppCompatActivity {
 
     protected void initData(Intent intent){
         String title = intent.getStringExtra(Constant.TITLE_KEY);
-        mCardId = intent.getStringExtra(Constant.CARD_ID_KEY);
-        mResidentEntity = DataUtils.getCacheResident(mCardId);
+        mCardNo = intent.getStringExtra(Constant.CARD_ID_KEY);
+        mResidentEntity = DataUtils.getCacheResident(mCardNo);
         if(mResidentEntity == null){
-            getResidentInfo(mRequestResultListener,mCardId);
+            getResidentInfo(mRequestResultListener, mCardNo);
         }else{
             updateResidentInfo(mResidentEntity);
         }
@@ -70,13 +71,14 @@ public abstract class BaseActivity  extends AppCompatActivity {
     private NetDataUtils.RequestResultListener mRequestResultListener = new NetDataUtils.RequestResultListener<ResidentEntity>(){
 
         @Override
-        public void returnFail(Throwable e) {
-
+        public void returnFail(String e) {
+            LogUtils.e(TAG,"returnFail : "+ e);
         }
 
         @Override
         public void returnSuccess(List<ResidentEntity> entity) {
             final ResidentEntity residentEntity= entity.get(0);
+            mResidentEntity = residentEntity;
             updateResidentInfo(residentEntity);
         }
 
@@ -86,10 +88,14 @@ public abstract class BaseActivity  extends AppCompatActivity {
         }
     };
 
-   private void getResidentInfo(NetDataUtils.RequestResultListener listener, String cardId){
+   public void getResidentInfo(NetDataUtils.RequestResultListener listener, String cardId){
        NetDataUtils.getInstance().getResidentInfo(listener,cardId);
     }
 
+
+    public void reQueryResidentInfo(){
+        getResidentInfo(mRequestResultListener, mCardNo);
+    }
     private void updateResidentInfo(ResidentEntity residentEntity){
         ImgUtils.load(mHeadIcon, residentEntity.getUrl(), R.drawable.gray_default);
         mNameView.setText(residentEntity.getName());

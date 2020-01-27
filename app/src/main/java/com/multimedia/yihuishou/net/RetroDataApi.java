@@ -12,6 +12,7 @@ import com.multimedia.yihuishou.entity.UserEntity;
 import io.reactivex.Observable;
 
 import retrofit2.http.GET;
+import retrofit2.http.POST;
 import retrofit2.http.Query;
 
 public interface RetroDataApi {
@@ -45,5 +46,25 @@ public interface RetroDataApi {
     @GET("getProductList")
     Observable<ModelBase<UserEntity>> getUserList();
 
+    //登录
+    @POST("userLogin")
+    Observable<ModelBase<UserEntity>> userLogin(@Query("userName") String userName , @Query("password") String password );
 
+    //登录
+    @POST("submitRubbishRecycleInfo")
+    Observable<ModelBase> submitRubblishRecycleInfo(
+            @Query("cardNo") String cardNO, @Query("comment") String comment,
+            @Query("inspectorAccount") String inspectorAccount, @Query("integral") String integral,
+            @Query("rubbishType") String rubbishType,@Query("weight") String weight
+             );
+
+
+
+    //登录
+    @POST("submitConsumeInfo")
+    Observable<ModelBase> submitConsumeInfo(
+            @Query("cardNo") String cardNO, @Query("comment") String comment,
+            @Query("count") String count, @Query("inspectorAccount") String inspectorAccount,
+            @Query("productId") String productId
+    );
 }

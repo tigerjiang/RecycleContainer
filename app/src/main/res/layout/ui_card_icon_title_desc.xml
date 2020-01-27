@@ -5,6 +5,7 @@
     android:id="@+id/v_layout"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:background="@drawable/item_bg"
     android:clickable="true"
     android:paddingStart="@dimen/dp_27"
     android:paddingEnd="@dimen/d_ui_parent_padding_width_13">
@@ -40,7 +41,7 @@
             android:layout_toRightOf="@+id/ui_icon"
             android:drawablePadding="@dimen/dp_5"
             android:textColor="@color/c_black_70"
-            android:textSize="@dimen/sp_12"/>
+            android:textSize="@dimen/sp_16"/>
 
         <TextView
             android:id="@+id/v_subtitle"
@@ -50,7 +51,7 @@
             android:layout_below="@+id/v_title"
             android:layout_toRightOf="@+id/ui_icon"
             android:textColor="@color/c_black_70"
-            android:textSize="@dimen/sp_12"/>
+            android:textSize="@dimen/sp_14"/>
 
         <TextView
             android:id="@+id/v_desc"
@@ -63,4 +64,10 @@
             android:textColor="@color/c_black_40"
             android:textSize="@dimen/sp_12"/>
     </LinearLayout>
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:src="@drawable/img_right_arrow"/>
 </RelativeLayout>

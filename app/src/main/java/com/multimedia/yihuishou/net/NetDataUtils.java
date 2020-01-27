@@ -7,6 +7,7 @@ import com.multimedia.yihuishou.entity.ModelBase;
 import com.multimedia.yihuishou.entity.ProductEntity;
 import com.multimedia.yihuishou.entity.ResidentEntity;
 import com.multimedia.yihuishou.entity.RubblishEntity;
+import com.multimedia.yihuishou.entity.UserEntity;
 import com.multimedia.yihuishou.log.LogUtils;
 
 import java.util.ArrayList;
@@ -21,9 +22,19 @@ import io.reactivex.schedulers.Schedulers;
 public class NetDataUtils {
     private static final String TAG = NetDataUtils.class.getSimpleName();
     public interface RequestResultListener<T>{
-        void returnFail(Throwable e);
+        void returnFail(String e);
 
         void returnSuccess(List<T> entity);
+
+        void requestStart();
+
+    }
+
+
+    public interface PostResultListener{
+        void returnFail(String e);
+
+        void returnSuccess();
 
         void requestStart();
 
@@ -58,23 +69,28 @@ public class NetDataUtils {
                     @Override
                     public void onNext(ModelBase<CommunityEntity> entityModelBase) {
                         LogUtils.d(TAG, "onNext : ");
-                        dataList.addAll(entityModelBase.getData());
+                        if(entityModelBase.getResult() == 0){
+                            //成功
+                            dataList.addAll(entityModelBase.getData());
+                            resultListener.returnSuccess(dataList);
+                        }else{
+                            //失败
+                            resultListener.returnFail(entityModelBase.getMsg());
+                        }
                     }
 
                     @Override
                     public void onError(Throwable e) {
                         LogUtils.d(TAG, "onError : ", e);
                         if (resultListener != null) {
-                            resultListener.returnFail(e);
+                            resultListener.returnFail(e.getMessage());
                         }
                     }
 
                     @Override
                     public void onComplete() {
                         LogUtils.d(TAG, "onComplete : ");
-                        if (resultListener != null) {
-                            resultListener.returnSuccess(dataList);
-                        }
+
 
                     }
                 });
@@ -100,23 +116,28 @@ public class NetDataUtils {
                     @Override
                     public void onNext(ModelBase<ProductEntity> entityModelBase) {
                         LogUtils.d(TAG, "onNext : ");
-                        dataList.addAll(entityModelBase.getData());
+                        if(entityModelBase.getResult() == 0){
+                            //成功
+                            dataList.addAll(entityModelBase.getData());
+                            resultListener.returnSuccess(dataList);
+                        }else{
+                            //失败
+                            resultListener.returnFail(entityModelBase.getMsg());
+                        }
                     }
 
                     @Override
                     public void onError(Throwable e) {
                         LogUtils.d(TAG, "onError : ", e);
                         if (resultListener != null) {
-                            resultListener.returnFail(e);
+                            resultListener.returnFail(e.getMessage());
                         }
                     }
 
                     @Override
                     public void onComplete() {
                         LogUtils.d(TAG, "onComplete : ");
-                        if (resultListener != null) {
-                            resultListener.returnSuccess(dataList);
-                        }
+
 
                     }
                 });
@@ -143,23 +164,28 @@ public class NetDataUtils {
                     @Override
                     public void onNext(ModelBase<RubblishEntity> entityModelBase) {
                         LogUtils.d(TAG, "onNext : " +entityModelBase.getData());
-                        dataList.addAll(entityModelBase.getData());
+                        if(entityModelBase.getResult() == 0){
+                            //成功
+                            dataList.addAll(entityModelBase.getData());
+                            resultListener.returnSuccess(dataList);
+                        }else{
+                            //失败
+                            resultListener.returnFail(entityModelBase.getMsg());
+                        }
                     }
 
                     @Override
                     public void onError(Throwable e) {
                         LogUtils.d(TAG, "onError : ", e);
                         if (resultListener != null) {
-                            resultListener.returnFail(e);
+                            resultListener.returnFail(e.getMessage());
                         }
                     }
 
                     @Override
                     public void onComplete() {
                         LogUtils.d(TAG, "onComplete : ");
-                        if (resultListener != null) {
-                            resultListener.returnSuccess(dataList);
-                        }
+
 
                     }
                 });
@@ -185,25 +211,165 @@ public class NetDataUtils {
                     @Override
                     public void onNext(ModelBase<ResidentEntity> entityModelBase) {
                         LogUtils.d(TAG, "onNext : " +entityModelBase.getData());
-                        dataList.addAll(entityModelBase.getData());
+                        if(entityModelBase.getResult() == 0){
+                            //成功
+                            dataList.addAll(entityModelBase.getData());
+                            resultListener.returnSuccess(dataList);
+                        }else{
+                            //失败
+                            resultListener.returnFail(entityModelBase.getMsg());
+                        }
                     }
 
                     @Override
                     public void onError(Throwable e) {
                         LogUtils.d(TAG, "onError : ", e);
                         if (resultListener != null) {
-                            resultListener.returnFail(e);
+                            resultListener.returnFail(e.getMessage());
                         }
                     }
 
                     @Override
                     public void onComplete() {
                         LogUtils.d(TAG, "onComplete : ");
-                        if (resultListener != null) {
-                            resultListener.returnSuccess(dataList);
-                        }
 
                     }
                 });
     }
+
+
+    //用户登录
+    public void login(final RequestResultListener resultListener, String userName, String pwd) {
+        final List<UserEntity> dataList = new ArrayList<>();
+        Observable<ModelBase<UserEntity>>  observable = RetroApiService.create(RetroDataApi.class)
+                .userLogin(userName,pwd);
+        observable.subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Observer<ModelBase<UserEntity>>() {
+                    @Override
+                    public void onSubscribe(Disposable d) {
+                        LogUtils.d(TAG, "onSubscribe");
+                        if (resultListener != null) {
+                            resultListener.requestStart();
+                        }
+                    }
+
+                    @Override
+                    public void onNext(ModelBase<UserEntity> entityModelBase) {
+                        LogUtils.d(TAG, "onNext : " +entityModelBase.getData());
+                        if(entityModelBase.getResult() == 0){
+                            //成功
+                            dataList.addAll(entityModelBase.getData());
+                            resultListener.returnSuccess(dataList);
+                        }else{
+                            //失败
+                            resultListener.returnFail(entityModelBase.getMsg());
+                        }
+
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+                        LogUtils.d(TAG, "onError : ", e);
+                        if (resultListener != null) {
+                            resultListener.returnFail(e.getMessage());
+                        }
+                    }
+
+                    @Override
+                    public void onComplete() {
+                        LogUtils.d(TAG, "onComplete : ");
+
+
+                    }
+                });
+    }
+
+    //垃圾回收提交
+    public void submitRubblishRecycleInfo(final PostResultListener resultListener, String cardNO, String comment, String inspectorAccount,String integral,String rubbishType,String weight) {
+        Observable<ModelBase>  observable = RetroApiService.create(RetroDataApi.class)
+                .submitRubblishRecycleInfo(cardNO,comment,inspectorAccount,integral,rubbishType,weight);
+        observable.subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Observer<ModelBase>() {
+                    @Override
+                    public void onSubscribe(Disposable d) {
+                        LogUtils.d(TAG, "onSubscribe");
+                        if (resultListener != null) {
+                            resultListener.requestStart();
+                        }
+                    }
+
+                    @Override
+                    public void onNext(ModelBase entityModelBase) {
+                        if(entityModelBase.getResult() == 0){
+                            resultListener.returnSuccess();
+                        }else{
+                            //失败
+                            resultListener.returnFail(entityModelBase.getMsg());
+                        }
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+                        LogUtils.d(TAG, "onError : ", e);
+                        if (resultListener != null) {
+                            resultListener.returnFail(e.getMessage());
+                        }
+                    }
+
+                    @Override
+                    public void onComplete() {
+                        LogUtils.d(TAG, "onComplete : ");
+
+
+                    }
+                });
+    }
+
+
+    //提交消费信息
+    public void submitConsumeInfo(final PostResultListener resultListener, String cardNO, String comment,
+                                          String count,String inspectorAccount,String productId) {
+        Observable<ModelBase>  observable = RetroApiService.create(RetroDataApi.class)
+                .submitConsumeInfo(cardNO,comment,count,inspectorAccount,productId);
+        observable.subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Observer<ModelBase>() {
+                    @Override
+                    public void onSubscribe(Disposable d) {
+                        LogUtils.d(TAG, "onSubscribe");
+                        if (resultListener != null) {
+                            resultListener.requestStart();
+                        }
+                    }
+
+                    @Override
+                    public void onNext(ModelBase entityModelBase) {
+                        LogUtils.d(TAG, "onNext : " +entityModelBase.toString());
+                        if(entityModelBase.getResult() == 0){
+                            resultListener.returnSuccess();
+                        }else{
+                            //失败
+                            resultListener.returnFail(entityModelBase.getMsg());
+                        }
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+                        LogUtils.d(TAG, "onError : ", e);
+                        if (resultListener != null) {
+                            resultListener.returnFail(e.getMessage());
+                        }
+                    }
+
+                    @Override
+                    public void onComplete() {
+                        LogUtils.d(TAG, "onComplete : ");
+
+
+                    }
+                });
+    }
+
 }

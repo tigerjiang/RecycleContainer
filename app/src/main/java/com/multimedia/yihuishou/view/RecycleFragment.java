@@ -1,15 +1,14 @@
 package com.multimedia.yihuishou.view;
 
 import android.content.Intent;
-import android.view.View;
 
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.multimedia.yihuishou.MainActivity;
 import com.multimedia.yihuishou.R;
 import com.multimedia.yihuishou.RecycleDetailActivity;
-import com.multimedia.yihuishou.entity.BaseEntity;
 import com.multimedia.yihuishou.entity.RubblishEntity;
 import com.multimedia.yihuishou.log.LogUtils;
 import com.multimedia.yihuishou.net.NetDataUtils;
@@ -40,8 +39,11 @@ public class RecycleFragment extends BaseFragment {
         // 设置布局管理器
         vUIRecyclerView.setLayoutManager(layoutManager);
 
+        RecycleViewDivider itemDivider = new RecycleViewDivider(mContext, LinearLayoutManager.HORIZONTAL, 2,
+                getResources().getColor(R.color.dividerColor));
+        itemDivider.setDrawLastItem(false);
         // 设置分隔线
-        vUIRecyclerView.addItemDecoration(new LinearLayoutItemDecoration(mContext.getResources().getDimensionPixelOffset(R.dimen.dp_13_3), false));
+        vUIRecyclerView.addItemDecoration(itemDivider);
         // 设置增加或删除条目的动画
         vUIRecyclerView.setItemAnimator(new DefaultItemAnimator());
 
@@ -63,9 +65,10 @@ public class RecycleFragment extends BaseFragment {
     public void handleQRcode(String qrString) {
 
         Intent intent = new Intent(getContext(), RecycleDetailActivity.class);
-        intent.putExtra("title", "RecycleDetail");
+        intent.putExtra(Constant.TITLE_KEY,getString(R.string.title_recycle));
         intent.putExtra(Constant.CARD_ID_KEY, "xhd123212");
         intent.putExtra(Constant.RUBBLISH_KEY, mCurrentRubblish);
+        intent.putExtra(Constant.USER_KEY, ((MainActivity)getActivity()).getUser());
         startActivity(intent);
         LogUtils.d(TAG, " handleQRcode " + qrString);
     }
@@ -75,13 +78,15 @@ public class RecycleFragment extends BaseFragment {
         NetDataUtils.getInstance().
                 getRubblishTypeList(new NetDataUtils.RequestResultListener<RubblishEntity>() {
                     @Override
-                    public void returnFail(Throwable e) {
+                    public void returnFail(String msg) {
 
                     }
 
                     @Override
                     public void returnSuccess(List<RubblishEntity> entity) {
                         LogUtils.d(TAG, "returnSuccess : " + entity.toString());
+                        mData.clear();
+                        mData.addAll(entity);
                         mGeneralAdapter.setData(entity);
                     }
 

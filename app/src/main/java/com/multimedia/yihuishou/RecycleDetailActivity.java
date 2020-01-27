@@ -2,19 +2,24 @@ package com.multimedia.yihuishou;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
 
-import com.multimedia.yihuishou.entity.BaseEntity;
 import com.multimedia.yihuishou.entity.RubblishEntity;
+import com.multimedia.yihuishou.entity.UserEntity;
+import com.multimedia.yihuishou.net.NetDataUtils;
 import com.multimedia.yihuishou.utils.Constant;
+
+import java.util.List;
 
 /**
  * 垃圾回收详情页
@@ -25,12 +30,14 @@ import com.multimedia.yihuishou.utils.Constant;
  */
 public class RecycleDetailActivity  extends BaseActivity {
 
+    private static final String TAG = "RecycleDetailActivity";
     private View mLayoutView;
 
     private TextView name_tv, weight_tv;
     private EditText weight_et, integral_et;
     private Button submitBtn;
     private RubblishEntity mRubblish ;
+    private UserEntity mUser ;
     private boolean isNeedAutoCalculate= false;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -50,19 +57,38 @@ public class RecycleDetailActivity  extends BaseActivity {
         submitBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+               submit();
             }
         });
-        weight_et.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+
+        weight_et.addTextChangedListener(new TextWatcher() {
             @Override
-            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
-                return false;
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                int len = s.length();
+                if(len >= 1) {
+                    String content = s.toString().trim();
+                    double weight = Double.parseDouble(content);
+                    if (isNeedAutoCalculate) {
+                        integral_et.setText(weight * mRubblish.getIntegralWeight() + "");
+                    }
+                }
             }
         });
         return mLayoutView;
     }
     private void initRecycleDetail(Intent intent){
         mRubblish = (RubblishEntity) intent.getSerializableExtra(Constant.RUBBLISH_KEY);
+        mUser = (UserEntity) intent.getSerializableExtra(Constant.USER_KEY);
         name_tv.setText(mRubblish.getName());
         isNeedAutoCalculate = false;
         //按次计算
@@ -85,6 +111,31 @@ public class RecycleDetailActivity  extends BaseActivity {
 
 
     private void submit(){
+
+        final String cardNo = mCardNo; //居民卡号
+        final String comment = TAG; //备注信息
+        final String integral = integral_et.getText().toString();;//积分数
+        final String inspectorAccount = mUser.getAccount(); //巡检员账号
+        final String weight = weight_et.getText().toString();//垃圾重量
+        final String rubbishType = mRubblish.getId()+""; //垃圾分类类型1-厨余垃圾； 2-纸张； 3-塑料； 4-易拉罐
+        NetDataUtils.getInstance().submitRubblishRecycleInfo(new NetDataUtils.PostResultListener() {
+            @Override
+            public void returnFail(String  msg) {
+                Toast.makeText(RecycleDetailActivity.this, "回收失败 ： " + msg, Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void returnSuccess() {
+                Toast.makeText(RecycleDetailActivity.this, "回收成功 ： " , Toast.LENGTH_SHORT).show();
+                reQueryResidentInfo();
+                finish();
+            }
+
+            @Override
+            public void requestStart() {
+
+            }
+        }, cardNo, comment, inspectorAccount,integral, rubbishType, weight);
 
     }
 

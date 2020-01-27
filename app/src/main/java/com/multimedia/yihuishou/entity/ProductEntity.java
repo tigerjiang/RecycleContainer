@@ -122,12 +122,12 @@ public class ProductEntity extends BaseEntity{
 
     @Override
     public String getSubtitle() {
-        return comment;
+        return count + unit;
     }
 
     @Override
     public String getDesc() {
-        return null;
+        return price + "积分 / "+unit;
     }
 
     @Override

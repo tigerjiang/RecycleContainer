@@ -1,5 +1,6 @@
 package com.multimedia.yihuishou;
 
+import android.content.Context;
 import android.os.Bundle;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -7,12 +8,15 @@ import com.multimedia.yihuishou.entity.CommunityEntity;
 import com.multimedia.yihuishou.entity.ModelBase;
 import com.multimedia.yihuishou.entity.ProductEntity;
 import com.multimedia.yihuishou.entity.RubblishEntity;
+import com.multimedia.yihuishou.entity.UserEntity;
 import com.multimedia.yihuishou.log.LogUtils;
 import com.multimedia.yihuishou.net.NetDataUtils;
+import com.multimedia.yihuishou.utils.Constant;
 import com.multimedia.yihuishou.view.BaseFragment;
 import com.multimedia.yihuishou.view.ExchangeFragment;
 import com.multimedia.yihuishou.view.QueryFragment;
 import com.multimedia.yihuishou.view.RecycleFragment;
+import com.multimedia.yihuishou.view.ui.CLVDialog;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.annotation.NonNull;
@@ -23,6 +27,7 @@ import androidx.fragment.app.FragmentTransaction;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.animation.Animation;
 import android.widget.FrameLayout;
 
 import java.util.HashMap;
@@ -33,6 +38,9 @@ public class MainActivity extends AppCompatActivity {
     private static final String TAG = "MainActivity";
     private FrameLayout mContainerView;
     private BaseFragment mCurrentFragment;
+    private Context mContext;
+
+    private UserEntity mUser ;
     /**
      * 界面——0：全部删除
      */
@@ -104,18 +112,20 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        mContext = this;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        mUser = (UserEntity) getIntent().getSerializableExtra(Constant.USER_KEY);
         BottomNavigationView navView = findViewById(R.id.nav_view);
         mContainerView = findViewById(R.id.container);
         navView.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
         showFragment(FragmentType.RECYCLE_TYPE);
-
-
-
     }
 
 
+    public UserEntity getUser(){
+        return mUser;
+    }
 
     /**
      * 执行界面机制
@@ -181,4 +191,22 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+
+    @Override
+    public void onBackPressed() {
+        String title = getString(R.string.dialog_title);
+        String message = getString(R.string.dialog_message);
+        CLVDialog.showOkCancel(this, title, message, R.string.dialog_cancel, R.string.dialog_ok, new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                CLVDialog.dismiss(mContext);
+            }
+        }, new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                CLVDialog.dismiss(mContext);
+                finish();
+            }
+        }, true);
+    }
 }

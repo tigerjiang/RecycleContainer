@@ -70,14 +70,6 @@ public class GeneralAdapter<T> extends RecyclerView.Adapter<GeneralAdapter.MyVie
             holder.vTitle.setText(entity.getTitle());
             holder.vSubTitle.setText(entity.getSubtitle());
             holder.vDesc.setText(entity.getDesc());
-//            if (entity.isChecked()) {
-//                holder.vLayout.setSelected(true);
-//                holder.vTitle.setCompoundDrawablesWithIntrinsicBounds(R.drawable.gray_default, 0, 0, 0);
-//            } else {
-//                holder.vLayout.setSelected(false);
-//                holder.vTitle.setCompoundDrawablesWithIntrinsicBounds(0, 0, 0, 0);
-//            }
-
             holder.vLayout.setTag(entity);
             holder.vLayout.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -87,7 +79,8 @@ public class GeneralAdapter<T> extends RecyclerView.Adapter<GeneralAdapter.MyVie
                     }
                 }
             });
-        } else {
+        }
+        else {
             holder. vTitle.setText("");
             holder. vSubTitle.setText("");
             holder.vDesc.setText("");
